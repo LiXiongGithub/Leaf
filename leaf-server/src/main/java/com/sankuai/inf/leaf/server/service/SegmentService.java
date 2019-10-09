@@ -8,6 +8,7 @@ import com.sankuai.inf.leaf.common.ZeroIDGen;
 import com.sankuai.inf.leaf.segment.SegmentIDGenImpl;
 import com.sankuai.inf.leaf.segment.dao.IDAllocDao;
 import com.sankuai.inf.leaf.segment.dao.impl.IDAllocDaoImpl;
+import com.sankuai.inf.leaf.segment.model.LeafAlloc;
 import com.sankuai.inf.leaf.server.Constants;
 import com.sankuai.inf.leaf.server.exception.InitException;
 import org.slf4j.Logger;
@@ -54,10 +55,16 @@ public class SegmentService {
     public Result getId(String key) {
         return idGen.get(key);
     }
+    
+    public LeafAlloc getLeafByParam(LeafAlloc leafAlloc) {
+        return idGen.getLeafByParam(leafAlloc);
+    }
     public SegmentIDGenImpl getIdGen() {
         if (idGen instanceof SegmentIDGenImpl) {
             return (SegmentIDGenImpl) idGen;
         }
         return null;
     }
+  
+   
 }

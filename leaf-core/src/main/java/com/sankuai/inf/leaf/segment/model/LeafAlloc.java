@@ -5,8 +5,20 @@ public class LeafAlloc {
     private long maxId;
     private int step;
     private String updateTime;
+    private String appId;
+    private String numSize;
+    private String prefixAdd;
+    private String type;
 
-    public String getKey() {
+    public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getKey() {
         return key;
     }
 
@@ -37,4 +49,29 @@ public class LeafAlloc {
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
+
+	public String getAppId() {
+		return appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+	}
+
+	public String getNumSize() {
+		return numSize;
+	}
+
+	public void setNumSize(String numSize) {
+		this.numSize = numSize;
+	}
+
+	public String getPrefixAdd() {
+		return prefixAdd;
+	}
+
+	public void setPrefixAdd(String prefixAdd) {
+		this.prefixAdd = prefixAdd;
+	}
+    
 }

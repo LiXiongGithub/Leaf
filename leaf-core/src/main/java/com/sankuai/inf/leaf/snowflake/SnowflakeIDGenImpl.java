@@ -5,6 +5,8 @@ import com.sankuai.inf.leaf.IDGen;
 import com.sankuai.inf.leaf.common.Result;
 import com.sankuai.inf.leaf.common.Status;
 import com.sankuai.inf.leaf.common.Utils;
+import com.sankuai.inf.leaf.segment.model.LeafAlloc;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -98,5 +100,10 @@ public class SnowflakeIDGenImpl implements IDGen {
     public long getWorkerId() {
         return workerId;
     }
+
+	@Override
+	public LeafAlloc getLeafByParam(LeafAlloc leafAlloc) {
+		return null;
+	}
 
 }

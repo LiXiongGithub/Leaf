@@ -277,4 +277,10 @@ public class SegmentIDGenImpl implements IDGen {
     public void setDao(IDAllocDao dao) {
         this.dao = dao;
     }
+
+	@Override
+	public LeafAlloc getLeafByParam(LeafAlloc leafAlloc) {
+		
+		return dao.getLeafByParam(leafAlloc);
+	}
 }

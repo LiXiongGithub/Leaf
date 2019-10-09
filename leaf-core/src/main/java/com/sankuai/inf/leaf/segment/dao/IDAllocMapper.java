@@ -32,4 +32,13 @@ public interface IDAllocMapper {
 
     @Select("SELECT biz_tag FROM leaf_alloc")
     List<String> getAllTags();
+    
+    
+    @Select("SELECT biz_tag,num_size,prefix_add,type FROM leaf_alloc WHERE biz_tag = #{key} AND app_id = #{appId}")
+    @Results(value = {
+            @Result(column = "biz_tag", property = "key"),
+            @Result(column = "num_size", property = "numSize"),
+            @Result(column = "prefix_add", property = "prefixAdd")
+    })
+    LeafAlloc getLeafByParam(@Param("leafAlloc") LeafAlloc leafAlloc);
 }

@@ -71,4 +71,14 @@ public class IDAllocDaoImpl implements IDAllocDao {
             sqlSession.close();
         }
     }
+
+	@Override
+	public LeafAlloc getLeafByParam(LeafAlloc leafAlloc) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(false);
+        try {
+            return sqlSession.selectOne("com.sankuai.inf.leaf.segment.dao.IDAllocMapper.getLeafByParam",leafAlloc);
+        } finally {
+            sqlSession.close();
+        }
+	}
 }
