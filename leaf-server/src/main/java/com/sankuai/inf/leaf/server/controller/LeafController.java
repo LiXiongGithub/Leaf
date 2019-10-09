@@ -36,14 +36,13 @@ public class LeafController {
     	lf.setAppId(appId);
     	LeafAlloc leafAlloc = segmentService.getLeafByParam(lf);
     	//拼装标志
-    	String preFix = leafAlloc.getPrefixAdd();
-    	int size = Integer.parseInt(leafAlloc.getNumSize());
     	String type = leafAlloc.getType();
     	if(type.equals("1")) {//如果雪花类型直接返回
     		return snowflakeService.getId(key).getId()+"";
     	}else {
+    		String preFix = leafAlloc.getPrefixAdd();
     		String resultKey  = get(key, segmentService.getId(key));
-        	
+    		int size = Integer.parseInt(leafAlloc.getNumSize());
     		if(resultKey.length()< size) {
         		//给resultKey前面补0
         		int count = size - resultKey.length();
